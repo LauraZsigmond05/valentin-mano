@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Leszel a Valentinom? 💖</title>
+
+<style>
+body{
+    margin:0;
+    font-family: Arial, sans-serif;
+    text-align:center;
+    background: linear-gradient(180deg, #ffd6e7, #ffc0cb);
+    overflow:hidden;
+}
+
+.container{
+    padding-top:50px;
+}
+
+img{
+    width:280px;
+    transition:0.5s;
+}
+
+.heart{
+    animation: beat 1s infinite;
+}
+
+@keyframes beat{
+    0%{ transform: scale(1); }
+    50%{ transform: scale(1.1); }
+    100%{ transform: scale(1); }
+}
+
+h2{
+    font-weight:normal;
+    margin-top:20px;
+}
+
+.buttons{
+    margin-top:25px;
+}
+
+button{
+    padding:12px 25px;
+    font-size:18px;
+    margin:10px;
+    border:none;
+    border-radius:8px;
+    cursor:pointer;
+}
+
+.yes{
+    background-color:#ff4d6d;
+    color:white;
+}
+
+.no{
+    background-color:#ccc;
+}
+
+.message{
+    margin-top:25px;
+    font-size:22px;
+    color:#d1005c;
+    display:none;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+    <img id="minion" src="https://i.imgur.com/3ZQ3Z3P.png">
+    <h2>Leszel a Valentinom? 💘</h2>
+
+    <div class="buttons">
+        <button class="yes" onclick="sayYes()">Igen 💖</button>
+        <button class="no" onclick="moveNo(this)">Nem</button>
+    </div>
+
+    <div class="message" id="message">
+        Nagyon szeretlek manó! ❤️
+    </div>
+</div>
+
+<script>
+function sayYes(){
+    document.getElementById("message").style.display="block";
+    document.getElementById("minion").classList.add("heart");
+}
+
+function moveNo(button){
+    button.style.position="absolute";
+    button.style.top=Math.random()*80+"%";
+    button.style.left=Math.random()*80+"%";
+}
+</script>
+
+</body>
+</html>
